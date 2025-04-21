@@ -1,0 +1,12 @@
+# macOS & Jupyter artifacts
+*DS_Store
+*ipynb_checkpoints
+*__pycache__
+
+# Ignore all files in the dataset folder but keep .gitkeep
+dataset/*
+!dataset/.gitkeep
+
+# Ignore all model weights but keep .gitkeep
+model_weights/*
+!model_weights/.gitkeep
