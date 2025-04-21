@@ -30,7 +30,7 @@ Make sure you have conda installed, then run:
 ```bash
 conda env create -f environment.yml
 conda activate stock_pred
-
+python -m ipykernel install --user --name stock_pred --display-name "Python (stock_pred)"
 ```
 
 ## 3. Launch Notebook
