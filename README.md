@@ -15,6 +15,11 @@ The win rate over past 10 years are around 80% to 90%
 - Visual backtest results with matplotlib
 
 ---
+## 📊 Prediction Visualization
+
+Here is a sample output from the prediction module:
+
+![ETF Prediction Demo](./assets/etf_pred_show.jpg)
 
 ## 🚀 Getting Started
 
