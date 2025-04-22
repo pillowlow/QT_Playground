@@ -42,7 +42,7 @@ jupyter notebook
 Open agent/etf_weekly_swing.ipynb to train, predict, and backtest.
 
 ## Project Structure
-
+```
 .
 ├── agent/
 │   └── etf_weekly_swing_test2.ipynb       # Main notebook
@@ -53,7 +53,8 @@ Open agent/etf_weekly_swing.ipynb to train, predict, and backtest.
 │   └── backtest_value_log.csv             # Weekly portfolio valuation
 ├── model_weights/                         # Saved top-k models per ETF
 ├── environment.yml                        # Conda environment spec
-└── README.md                              # ← You are here!
+└── README.md    # ← You are here!
+```                          
 
 ## 📊 Strategy
 Each week, predict returns using saved top-5 models
