@@ -5,7 +5,7 @@ A research-driven backtesting system designed to **predict weekly ETF returns** 
 The win rate over past 10 years are around 80% to 90% 
 
 ---
-
+## Currently Fixing !!
 ## 📌 Features
 
 - Dual-head Transformer model for weekly return prediction
