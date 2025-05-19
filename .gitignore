@@ -3,6 +3,8 @@
 *ipynb_checkpoints
 *__pycache__
 
+FinRL/*
+
 # Ignore all files in the dataset folder but keep .gitkeep
 dataset/*
 !dataset/.gitkeep

@@ -36,7 +36,7 @@ class StockPredictionTransformer(nn.Module):
 
         # Droupout 層
         self.pooling_dropout = nn.Dropout(0.3)
-        self.output_dropout = nn.Dropout(0.1)
+        # self.output_dropout = nn.Dropout(0.1)
 
         # 融合層 (簡單拼接後的全連接層)
         self.fusion_layer = nn.Linear(2 * input_dim + etf_embedding_dim, seq_len) # 拼接 ETF 和 Macro 特徵
@@ -115,7 +115,7 @@ class StockPredictionTransformer(nn.Module):
 
         # 融合層
         fused_output = self.elu(self.fusion_layer(fusion_input)) # [batch_size, seq_len]
-        fused_output = self.output_dropout(fused_output)
+        # fused_output = self.output_dropout(fused_output)
 
         # 輸出層
         prediction = self.output_layer(fused_output) # [batch_size, output_dim]
