@@ -12,3 +12,7 @@ dataset/*
 # Ignore all model weights but keep .gitkeep
 model_weights/*
 !model_weights/.gitkeep
+
+# Ignore all model weights but keep .gitkeep
+daily_trade_FinRLBased_output/*
+!daily_trade_FinRLBased_output/.gitkeep
