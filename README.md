@@ -1,10 +1,9 @@
-# 🧠 Weekly Swing Transformer
-
-A research-driven backtesting system designed to **predict weekly ETF returns** using Transformer-based models, and simulate a simple **weekly buy-sell trading strategy**. It supports evaluation against a benchmark ETF (e.g., SPY) and logs trades, predictions, and performance metrics.
-
-The win rate over past 10 years are around 80% to 90% 
 
 ---
+## Currently Fixing !!
+
+I am trying to adjust the task here for the AI models for not predicting the actualy trend (due to the overfitting nd signal leg problems still severe in some case), but for helping rule-based stretegy for better judgement. Also, I am tryng to intergraet FinRL's API for better data preparation. So many design here might not be avaliable. I suggest to use the singal working cells for bulding new testing components.
+
 
 ## 📌 Features
 
