@@ -1,6 +1,10 @@
 
 ---
 ## Currently Fixing !!
+
+I am trying to adjust the task here for the AI models for not predicting the actualy trend (due to the overfitting nd signal leg problems still severe in some case), but for helping rule-based stretegy for better judgement. Also, I am tryng to intergraet FinRL's API for better data preparation. So many design here might not be avaliable. I suggest to use the singal working cells for bulding new testing components.
+
+
 ## 📌 Features
 
 - Dual-head Transformer model for weekly return prediction
