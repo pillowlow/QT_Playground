@@ -1,0 +1,42 @@
+maybe just like , u can see this , the qqq and gld rate will not vary very extrwme a lot over long time (becasue this is not actual price, so it will relatively be better for gird strategy , which works best in a stable area). so, i think it is good for doing a grid stretegy over the 2 assset dustri utin (when asset1 / asset2 been high , then sell asset 1 to buy asset 2 ) . or she like this , i think it will be a good idea . can u wiret a grid stretegy calss for me ? i want to do a Boolean tunnel combined grid strategy. 
+
+for the new class , i think we need new data structure.
+1. asset profolio (asset data 1 , asset data 2 , percent 1, percent 2 , total init capital)
+this presents the initial distribution of the assets 
+2. transection ( buy/sell ,asset, share )
+
+
+the 2asset Boolean grid class strategy calss should be like  init  (unit (total profolio percent),grid dense(int), profolio , minimun asset1 percebt . munimune asset 2 percent , Boolean width , ) , and we can got a function: run to return a listst of transections for these 2 aseet from start date to end date.
+
+and i want this class include a plotting function (start date , end date) . so if a Boolean grid object is created, we can both call the run and plot to show the strategy result. 
+
+ as for the core function it self, it will be easy, the grid will be the width of boolean tunnel / grid dense(int) , the anchor point will be the average ratio of the 2 assets in the provide time priod. (the bolean mid line ).when the condition triggerd , just record a transection(if asset1/aseset2 up,sell asset1 to  buy asset 2 and vise versa) in the transection list(beeing a globalvariable inside the calss).
+
+and there will be some edge case , for example ,the proce go up or down  over the boolean tunnel , or the holding shre of a asset is below the limited percent, or one asset is simply has zero share , we should just skip any trnasection and wait.
+
+if u can got all these ideas , give me the new block about this stretegy 
+
+//
+the thing u draw out is like this , and this is not waht i want, here is the list that i want u to revise for : 
+1. firstly, your boolean is not moving with the price, the boolean shoyld be calculated dynamically fillowing the price
+2. the width should not be a strict number , hould be the meaning of how much statndard deviation
+3. u only include the sell qqq but gld , but we alos need the inverse side (sell gld buy qqq).
+4. the trading logic of u made seems stramge . the ideal trading record should be , we will trade when the price is in the boolean tuneel , and if the prcie or our profolio distribution meet the edge case , or out of boolean tunnel , just wait and od not operation. but u onlu trade oustlde of teh boolean tunnel , whci his not my meanning.
+
+// 
+some thing to tell , first , the class should be called booleanGridStrategy, and the asset name we bnuild previos blocks are (asset1=asset_qqq, asset2=asset_gld). 
+ and the signak u defined lack of a "share" facotr , means how muahc share do u trade. and the one trading unit should also be a float parameteor "transection unit " like 0.05 or sth, means that each reallocatie (for eacmle form asset 2 to asset 1 ) should be at the unit of the current full capital value * transection unit 
+
+there are still some of misunderstand of your version of the algorthm itself:
+
+1. the "window" u wrote should be the MA aveage time right ? but we need anothjer  "grid_dense" factor, whcih means "deviding the current diference from the boolean upper to buttom  ", this factor is used to determine current grid unit scale (so probbly boit being like 20 , maybe will be sth like 5, beacuse it aslo varies form the width variation of boolean tunnelk)
+2. after geting the grid scale, the logic we want to do is , when the ratio goes down for one grid , but more asset2 and sell aasset 1 (a buy asset2 signal) and vise versa. and if the edge condition happens (go out of the booleab tunnel) . just wiat and give no signal.
+for example , if the  currnt ratio's up is 2, down is 1, and grid_dense is 5 , means that the grid unit is 0.2 , whne the cirrent line go down for each 0.2, we will trigger  transection units of asset moving from asset 1 to aset 2 to buy low , and if it is going high , we also sell the asme value from asset 2 to buy aset 1 back , that is the meaning of grid
+
+// 
+__init__(self,
+                 status : 
+                 status: DualAssetGridStatus,
+                 window=20,
+                 std_multiplier=1.0,
+                 transaction_unit=10):
